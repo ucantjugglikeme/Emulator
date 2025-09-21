@@ -1,0 +1,40 @@
+commands:
+  - NOP: {}
+  - LTM:
+      memory_address: 7
+      literal: 8
+  - MTR:
+      memory_address: 7
+      register_address: 2
+  - JMPIF:
+      command_address: 7
+  - MULT:
+      first_operand: 2
+      second_operand: 2
+      register_address: 2
+  - RTM:
+      memory_address: 7
+      register_address: 2
+  - DECR:
+      register_address: 2
+  - JMP:
+      command_address: 7
+  - PUSH:
+      register_address: 2
+  - POP:
+      register_address: 2
+  - LTRA:
+      literal: 8
+  - RET: {}
+  - PUSHRA: {}
+  - POPRA: {}
+  - RTR:
+      first_register: 2
+      second_register: 2
+
+commands_size: 7
+command_size: 19
+cop_size: 4
+memory_size: 7
+register_file: 2
+literal_size: 8
