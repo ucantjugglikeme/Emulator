@@ -25,7 +25,7 @@ def programm_to_emul(emul: 'Emulator', programm_path: str) -> None:
                 raise SyntaxError(f'{mark=} does not match the mark pattern.')
         else:
             command = parts[0]
-        if not re.match('^[A-Z]+( [L0-9]+(,[L0-9])*)?$', command):
+        if not re.match('^[A-Z]+( L?[0-9]+(,L?[0-9]+)*)?$', command):
             raise SyntaxError(f'{command=} does not match the command pattern.')
 
     for i, command in enumerate(programm_text, start=start):
