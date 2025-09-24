@@ -57,15 +57,15 @@ class Processor:
         registers = '\n'.join([f'\t\t{i}: {reg.to01()}' for i, reg in enumerate(self.registers)])
         stack = '\n'.join([f'\t\t{i}: {stk.to01()}' for i, stk in enumerate(self.stack)])
         if not stack:
-            stack = f'stack=[],\n'
+            stack = f'[]'
         else:
-            stack = f'stack=[\n{stack}],\n'
+            stack = f'[\n{stack}]'
         ra = self.ra.to01()
         str_ = (
             f'Processor(commands=[\n{commands}],\n'
             f'\tmemory=[\n{memory}],\n'
             f'\tregisters=[\n{registers}],\n'
-            f'\t{stack}'
+            f'\tstack={stack},\n'
             f'\tra={ra},\n'
             f'\tcommand_idx={self.command_idx})'
         )
